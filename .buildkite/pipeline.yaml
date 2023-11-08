@@ -1,0 +1,8 @@
+steps:
+  - label: "build and push docker image"
+    plugins:
+      - docker#v3.6.0:
+          build: "./Dockerfile"
+          image: "nodeapp:v1"
+          registry: "https://registry.hub.docker.com/v2/"
+          login: true
