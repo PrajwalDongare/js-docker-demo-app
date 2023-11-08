@@ -1,8 +1,10 @@
+env:
+  USERNAME: "pradong"
+  PASSWORD: "9482465919"
+
 steps:
-  - label: "build and push docker image"
-    plugins:
-      - docker#v3.6.0:
-          build: "./Dockerfile"
-          image: "nodeapp:v1"
-          registry: "https://registry.hub.docker.com/v2/"
-          login: true
+  - lable: "build and push docker image"
+    command:
+      - "docker build -t nodeapp:v1 ./Dockerfile"
+      - "docker login -u $USERNAME -p $PASSWORD"
+      - "docker push nodeapp:v1"
