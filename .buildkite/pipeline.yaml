@@ -5,7 +5,6 @@ steps:
   - label: "build and push docker image"
     plugins:
       - docker#v3.6.0:
-          build: "./Dockerfile"
-          image: "nodeapp:v1"
-          registry: "index.docker.io/pradong/app_images"
           login: true
+      - command: "docker build -t nodeapp:v1 ."
+      - command: "docker push pradong/nodeapp:v1"
