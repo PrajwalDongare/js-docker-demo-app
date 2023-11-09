@@ -8,4 +8,4 @@ steps:
           username: "pradong"
           password: "9482465919"
   - command: "docker build -t nodeapp:v1 ."
-  - command: "docker push pradong/nodeapp:v1"
+  - command: "docker push pradong/app_images:v1"
